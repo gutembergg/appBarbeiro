@@ -26,7 +26,7 @@ class User {
   @BeforeInsert()
   @BeforeUpdate()
   async generatePasswordHash(): Promise<void> {
-    this.password = await bcrypt.hashSync(this.password, 8)
+    this.password = bcrypt.hashSync(this.password, 8)
   }
 
   @CreateDateColumn()

@@ -17,6 +17,10 @@ class UserControlle {
 
     return res.status(201).json(user)
   }
+
+  public async index(req: Request, res: Response): Promise<Response> {
+    return res.json({ UserID: req.userId })
+  }
 }
 
 export default UserControlle
